@@ -122,6 +122,24 @@ $(document).ready(function(){
 			$(this).addClass('active').next('.js-tab-content').slideDown(200);
 		}
 	})
+
+
+    //animation
+    var sTop = $(window).scrollTop() + $(window).innerHeight();
+    $('.item-animation').each(function () {
+        if ($(this).offset().top < sTop) {
+            $(this).addClass('item-active')
+        }
+    })
+
+    $(window).scroll(function () {
+        var sTop = $(window).scrollTop() + $(window).innerHeight();
+        $('.item-animation').each(function () {
+            if ($(this).offset().top < sTop) {
+                $(this).addClass('item-active')
+            }
+        })
+    });
 	
 });
 

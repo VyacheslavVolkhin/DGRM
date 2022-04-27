@@ -77,6 +77,18 @@ html {
 }
 .header {
     z-index: 99;
+    .action-search {
+        position: relative;
+    }
+    .search-content-block {
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        width: 255px;
+        z-index: 10;
+        margin-top: -23px;
+    }
 }
 .nav {
     .btn-menu {
@@ -621,6 +633,9 @@ html {
         }
         .action-menu {
             display: none;
+        }
+        .search-content-block {
+            width: 600px;
         }
     }
     .nav {

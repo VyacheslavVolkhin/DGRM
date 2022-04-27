@@ -284,6 +284,10 @@ select::-ms-expand {
     color: inherit;
     &:hover {
         color: inherit;
+        &:before {
+            filter: brightness(1.5);
+            background-color: var(--clr-att);
+        }
     }
     &:before {
         content: "";
@@ -297,6 +301,7 @@ select::-ms-expand {
         top: 50%;
         right: 0;
         margin-top: -18px;
+        transition: all ease 0.2s;
     }
 }
 .btn-action-file {
@@ -557,6 +562,21 @@ select::-ms-expand {
                 }
             } 
         }
+    }
+}
+.frm-main-search {
+    position: relative;
+    line-height: 1;
+    .form-input {
+        height: 46px;
+        padding-right: 40px;
+    }
+    .btn-action-ico {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -20px;
+        z-index: 5;
     }
 }
 .frm-field-date {
