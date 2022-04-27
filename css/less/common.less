@@ -58,6 +58,16 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    &.show-all {
+        .item-wrap.wrap-more {
+            a[data-show]:before {
+                content: attr(data-hide);
+            }
+        }
+        .item-wrap.wrap-hidden {
+            display: block;
+        }
+    }
 }
 .item-wrap {
     width: 100%;
@@ -75,6 +85,12 @@
                 display: block;
             }
         }
+        a[data-show]:before {
+            content: attr(data-show);
+        }
+    }
+    &.wrap-hidden {
+        display: none;
     }
 }
 .slider-wrap,

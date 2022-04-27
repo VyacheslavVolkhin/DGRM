@@ -328,7 +328,7 @@ select::-ms-expand {
     color: var(--clr-base);
     position: relative;
     padding: 0 51px 0 0;
-    &:before {
+    &:before, &:after {
         content: "";
         display: block;
         width: 36px;
@@ -342,15 +342,45 @@ select::-ms-expand {
         background-repeat: no-repeat;
         background-size: 24px auto;
         border: 1px solid #69675B;
+        transition: all ease 0.2s;
+    }
+    &:after {
+        opacity: 0;
     }
     &.ico-more {
         &:before {
             background-image: url(../img/icons/arrow-more.svg);
         }
+        &:after {
+            background-image: url(../img/icons/arrow-more-att.svg);
+            border-color: var(--clr-att);
+        }
+        &:hover {
+            &:before {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
     }
     &.ico-download {
         &:before {
             background-image: url(../img/icons/download.svg);
+            transition: all  ease 0.2s;
+        }
+        &:after {
+            background-image: url(../img/icons/download-att.svg);
+            border-color: var(--clr-att);
+            transition: all  ease 0.2s;
+        }
+        &:hover {
+            &:before {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
         }
     }
 }
@@ -730,6 +760,19 @@ select::-ms-expand {
         right: 8px;
         z-index: 5;
         margin-top: -20px;
+    }
+}
+body {
+    .ui-tooltip {
+        font-size: 12px;
+        line-height: 14px;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        background: var(--clr-base);
+        max-width: 300px;
+        width: auto;
+        text-align: left;
     }
 }
 @media (max-width: 1023px) {

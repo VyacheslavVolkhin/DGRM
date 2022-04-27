@@ -19,7 +19,20 @@ $(document).ready(function(){
 	  });
 	  return this;
 	};
+
+
+    //wrap more toggle
+    $('.item-wrap.wrap-more a[data-show]').on('click', function () {
+        $(this).parents('.items-wrap').toggleClass('show-all');
+        $(this).toggleClass('active');
+        return false;
+    })
     
+    
+    //tooltip
+    $('.js-tooltip').tooltip({
+        position: { my: "center bottom", at: "center top-20" }
+    });
     
     //password
     $('.js-btn-password').on('click', function() {
@@ -125,7 +138,7 @@ $(document).ready(function(){
 
 
     //animation
-    var sTop = $(window).scrollTop() + $(window).innerHeight();
+    var sTop = $(window).scrollTop() + $(window).innerHeight() - 400;
     $('.item-animation').each(function () {
         if ($(this).offset().top < sTop) {
             $(this).addClass('item-active')
@@ -133,7 +146,7 @@ $(document).ready(function(){
     })
 
     $(window).scroll(function () {
-        var sTop = $(window).scrollTop() + $(window).innerHeight();
+        var sTop = $(window).scrollTop() + $(window).innerHeight() - 400;
         $('.item-animation').each(function () {
             if ($(this).offset().top < sTop) {
                 $(this).addClass('item-active')
@@ -143,4 +156,11 @@ $(document).ready(function(){
 	
 });
 
-
+//ie11 fixed table head
+function isIE() {
+    return navigator.userAgent.indexOf('MSIE') > -1 || navigator.appVersion.indexOf('Trident/') > -1
+}
+if (isIE()) {
+    let body = document.body;
+    body.classList.add("body-ie");
+}
