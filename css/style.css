@@ -4330,8 +4330,8 @@ body:not(.body-ie) .scroll-box table thead {
   max-width: calc(100% - 35.6rem);
 }
 .exchange-rate-box .items-wrap {
-  margin: 0 -60px 0 0;
-  margin: 0 -6rem 0 0;
+  margin: 0 -80px 0 0;
+  margin: 0 -8rem 0 0;
 }
 .exchange-rate-box .item-wrap {
   width: auto;
@@ -5026,6 +5026,21 @@ body:not(.body-ie) .scroll-box table thead {
   }
 }
 @media (min-width: 1024px) {
+  .exchange-rate-box .items-wrap {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    margin: 0 -30px 0 0;
+    padding-right: 30px;
+    overflow: auto;
+    -ms-overflow-style: none;
+  }
+  .exchange-rate-box .items-wrap::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  .exchange-rate-box .item-wrap:last-child {
+    padding-right: 0;
+  }
   .page .exchange-rate-box .inner-wrap {
     padding-top: 0;
   }

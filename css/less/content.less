@@ -1385,7 +1385,7 @@ body {
         max-width: calc(100% - 35.6rem);
     }
     .items-wrap {
-        margin: 0 -6rem 0 0;
+        margin: 0 -8rem 0 0;
     }
     .item-wrap {
         width: auto;
@@ -2053,6 +2053,25 @@ body {
     }
 }
 @media (min-width: 1024px) {
+    .exchange-rate-box {
+        .items-wrap {
+            flex-wrap: nowrap;
+            margin: 0 -30px 0 0;
+            padding-right: 30px;
+            overflow: auto;
+            overflow: auto;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                width: 0;
+                height: 0;
+            }
+        }
+        .item-wrap {
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
     .page {
         .exchange-rate-box {
             .inner-wrap {
